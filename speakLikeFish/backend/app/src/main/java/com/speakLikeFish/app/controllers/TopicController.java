@@ -11,7 +11,11 @@ import com.speakLikeFish.app.services.TopicService;
 @RestController
 public class TopicController {
     
-    private final TopicService topicService = new TopicService();
+    private final TopicService topicService;
+
+    public TopicController(TopicService topicService){
+        this.topicService = topicService;
+    }
 
     @GetMapping("/topics")
     public List<Topic> listTopics() {
